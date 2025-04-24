@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapper Legacy Wallet</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 2rem;
+        }
+        .download-message {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        .checkmark {
+            width: 36px;
+            height: 36px;
+            margin: 2rem auto;
+            display: none;
+        }
+        .checkmark::before {
+            content: "✓";
+            color: #4CAF50;
+            font-size: 36px;
+            line-height: 36px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>Dapper</h1>
+        </div>
+        <div class="download-message">
+            <h2>Downloading Legacy Wallet Files...</h2>
+            <div class="spinner" id="spinner"></div>
+            <div class="checkmark" id="checkmark"></div>
+            <p id="status-text">Please wait while we prepare your download...</p>
+        </div>
+    </div>
+    <script>
+        // Redirect to download after a short delay
+        setTimeout(() => {
+            window.location.href = 'https://storage.cloud.google.com/dapper-eth-production_artifacts/1.0.0.44_0.zip';
+            
+            // Show success state after download starts
+            setTimeout(() => {
+                document.getElementById('spinner').style.display = 'none';
+                document.getElementById('checkmark').style.display = 'block';
+                document.getElementById('status-text').textContent = 'Download started! Please check your downloads folder.';
+            }, 1000);
+        }, 2000);
+    </script>
+</body>
+</html> 
