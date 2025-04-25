@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ObGSNYwernvxuy76WYqAHk7gd44LiaUyf9c+hU99tPg='; style-src 'self' 'unsafe-inline'; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none';">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -115,6 +115,6 @@
             <p id="status-text">Click the button above to start your download</p>
         </div>
     </div>
-    <script>document.getElementById("downloadBtn").addEventListener("click",function(){this.style.display="none",document.getElementById("spinner").style.display="block",document.getElementById("status-text").textContent="Preparing your download...",setTimeout(()=>{window.location.href="https://storage.googleapis.com/dapper-eth-production_artifacts/1.0.0.44_0.zip",setTimeout(()=>{document.getElementById("spinner").style.display="none",document.getElementById("checkmark").style.display="block",document.getElementById("status-text").textContent="Download started! Please check your downloads folder."},1e3)},2e3)});</script>
+    <script src="js/download.js"></script>
 </body>
 </html> 
